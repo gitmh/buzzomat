@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Buzz-o-mat Lernen 5.0</title>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="jquery.slotmachine.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="jquery.slotmachine.js"></script>
+<script type="text/javascript" src="sparkle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.16/clipboard.min.js"></script>
+
+<script language="JavaScript">
+var parts1 = [
+ "Twitter ist", 
+ "Digitalisierung ist", 
+ "Ein interaktives Smartboard ist", 
+ "Web 2.0 ist", 
+ "Snapchat ist", 
+ "StudiVZ war", 
+ "Die Maker-Bewegung ist", 
+ "Partizipation ist", 
+ "Die Vermittlung von Medien&shy;kompetenz ist", 
+ "Podcasten ist", 
+ "Glasfaser ist", 
+ "Politische Bildung ist", 
+ "Virtuelle Realität ist", 
+ "Das Schulbuch war", 
+ "WLAN ist", 
+ "Wikipedia ist", 
+ "Das Buch war", 
+ "Lernen 4.0 ist", 
+ "Die Unklarheit ist", 
+ "Die Handschrift war", 
+ "Der Leitmedienwechsel ist ", 
+ "Schule ist", 
+ "BTX war", 
+ "Der MOOC ist", 
+ "Eine offene Bildungs&shy;ressource (OER) ist", 
+ "Das Erlernen einer Programmier&shy;sprache ist", 
+ "Die Hochschule ist", 
+ "Die Volkshochschule ist", 
+ "Jede Fortbildung ist", 
+ "Facebook ist", 
+ "Die Trennung von Analog und Digital ist", 
+ "Medienbildung ist", 
+ "Die Erfindung des Internets ist", 
+ "Ein Handyverbot ist", 
+ "Der Füller ist", 
+ "Kuchen ist", 
+ "Das Ausdrucken des Internets ist", 
+ "Der 3D-Druck ist", 
+ "Das Schicksal von Lehrenden ist", 
+ "Eine Konsortin ist", 
+ "Multitasking ist", 
+ "Die Karriere als Hochschul&shy;lehrer/in ist", 
+ "Die Einführung der Sprache war", 
+ "EduCamp als alternatives Tagungsformat ist", 
+ "BYOD ist", 
+ "Das dreigliedrige Schulsystem ist", 
+ "Die falsche Verwendung von Satzzeichen ist", 
+ "Digitale Kompetenz ist", 
+ "Google Docs ist", 
+ "Jan Böhmermann ist", 
+ "Ein Einhorn ist", 
+ "Lehrerfortbildung ist" 
+];
+
+var parts2 = [
+ "seit Erfindung des Buchdrucks", 
+ "mitnichten", 
+ "in gewisser Hinsicht", 
+ "am Ende des Tages", 
+ "quasi", 
+ "sicherlich", 
+ "bei aller Liebe", 
+ "gerade für die Skeptiker", 
+ "unleugbar", 
+ "auch für Hartgesottene", 
+ "streng genommen", 
+ "menschlich gesehen", 
+ "selten", 
+ "für besorgte Bürger", 
+ "in anderen Kulturkreisen", 
+ "ohne Übertreibung", 
+ "im Zuge der Globalisierung", 
+ "niemals", 
+ "schon lange nicht mehr", 
+ "völlig nüchtern betrachtet", 
+ "heutzutage", 
+ "bei Lichte gesehen", 
+ "konsequent eingesetzt", 
+ "wider Erwarten", 
+ "leider", 
+ "kultur-pessimistisch betrachtet", 
+ "kafkaesk gesehen", 
+ "rückblickend", 
+ "absolut", 
+ "mit Erkenntnissen der Hirnforschung", 
+ "ganz objektiv", 
+ "erwiesenermaßen", 
+ "praktisch", 
+ "durch die Blume gesagt", 
+ "unter Drogeneinfluss", 
+ "irgendwie", 
+ "primär", 
+ "in Zukunft", 
+ "in Wahrheit", 
+ "allenfalls", 
+ "gelinde gesagt", 
+ "stückweise", 
+ "genau genommen", 
+ "an und für sich", 
+ "traurigerweise", 
+ "theoretisch", 
+ "unter Umständen", 
+ "aus unserer Perspektive", 
+ "selbst betrunken gesehen", 
+ "sozusagen", 
+ "zum Glück", 
+ "schließlich"
+ ];
+ 
+var parts3 = [ 
+ "die größte Innovation", 
+ "der größte Feind", 
+ "eine Disruption", 
+ "ein kleines Hindernis", 
+ "eine Einladung", 
+ "ein Albtraum", 
+ "eine Seifenoper", 
+ "das Problem", 
+ "eine Voraussetzung", 
+ "das Sahnehäubchen", 
+ "der Untergang", 
+ "eine Chance", 
+ "ein gutes Beispiel", 
+ "ein pädagogischer Mehrwert", 
+ "das neue Latein", 
+ "eine Herausforderung", 
+ "ein Meisterwerk", 
+ "eine Verschwörungs&shy;theorie", 
+ "ein Risiko", 
+ "der Katalysator", 
+ "die Antwort", 
+ "der Anfang vom Ende", 
+ "nicht das Gelbe vom Ei", 
+ "eine Offenbarung", 
+ "die Lösung", 
+ "die langweiligste Erfindung", 
+ "ein Siebenmeilen&shy;stiefel", 
+ "ein Quantensprung", 
+ "ein Treiber", 
+ "ein Mahnmal", 
+ "nur ein Hype", 
+ "der verlängerte Arm", 
+ "ein Schwert", 
+ "ohne jeglichen Einfluss", 
+ "die späte Rache", 
+ "eine Schlüssel&shy;qualifikation", 
+ "die Grundvoraus&shy;setzung", 
+ "ein Denkmal", 
+ "der Sprengstoff", 
+ "das KO-Kriterium", 
+ "eine Modeerscheinung", 
+ "ein Dogma", 
+ "nur optional", 
+ "ein grausiges Schicksal", 
+ "das neue \"42\"", 
+ "ein Vorbild", 
+ "ein Schulfach", 
+ "auch nur ein Indiz", 
+ "eine methodische Glanz&shy;leistung", 
+ "der Beweis", 
+ "nicht folgenlos", 
+ "ein Deckname"
+ ];
+ 
+var parts4 = [
+  "für die Universität.", 
+ "für die Erwachsenen&shy;bildung.", 
+ "im gesamten Bildungs&shy;wesen.", 
+ "für das lebenslange Lernen.", 
+ "für die Didaktik.", 
+ "im digitalen Entwicklungs&shy;land.", 
+ "und nicht die Lösung.", 
+ "für den Erfolg.", 
+ "für das Abitur.", 
+ "für das Leben, das Universum und den ganzen Rest.", 
+ "für die Didaktik.", 
+ "für Frontal&shy;unterricht.", 
+ "für jede Promotion.", 
+ "in der Informations&shy;gesellschaft.", 
+ "für die Rolle der Lehrperson.", 
+ "auf der Datenautobahn.", 
+ "für den Hochschul&shy;zugang.", 
+ "für das Volk.", 
+ "für den Waldbestand Deutschlands.", 
+ "für alles.", 
+ "für kleine niedliche Katzen.", 
+ "für Silver Surfer.", 
+ "für digitale Selbst&shy;verteidigung.", 
+ "für Bildungsferne.", 
+ "für reaktionäre Kräfte.", 
+ "für Zugreisende.", 
+ "für das Hier und Jetzt.", 
+ "für die Bildungs&shy;politik.", 
+ "für Pokémon GO.", 
+ "für den Datenschutz.", 
+ "für Digital Natives.", 
+ "im deutsch&shy;sprachigen Europa.", 
+ "für Smartphone-Besitzer.", 
+ "für das Bildungs&shy;verständnis.", 
+ "für knapp die halbe Menschheit.", 
+ "der Vergangenheit.", 
+ "für digitale Demenz.", 
+ "auf der Agenda der Schulrektoren.", 
+ "im Korrekturmodus.", 
+ "für Inklusion.", 
+ "für Beschäftigungs&shy;therapie.", 
+ "für ungenaues Projekt&shy;management.", 
+ "für Hatespeech.", 
+ "für die Öffentlichkeit.", 
+ "für Open Science.", 
+ "für Open Data.", 
+ "für die Aus- und Weiterbildung.", 
+ "für die Bildungs&shy;gesellschaft.",
+ "für die Zukunft.", 
+ "für das Studium.", 
+ "für jeden Pädagogen.", 
+ "für Lern&shy;management&shy;systeme."
+ ];
+</script>
+</head>
+
+<body>
+		<div id="casino" style="padding-top:50px;">
+			<div class="content">
+				<h1>Buzz-o-Mat</h1>
+
+				<div style="position:relative">
+				  <div style="width: 46px; height: 152px; position: absolute; right: -120px; top: 10px; cursor:pointer" id="handleBtn"><div style="width:100%;height:100%" class="handle sparkle"></div></div>
+				  
+				  <div class="bullet" style="left:50px"></div>
+				  <div class="bullet" style="left:86px"></div>
+				  <div class="bullet" style="left:122px"></div>
+				  <div class="bullet" style="left:158px"></div>
+				  <div class="bullet" style="left:194px"></div>
+				  <div class="bullet" style="left:230px"></div>
+				  <div class="bullet" style="left:267px"></div>
+				  <div class="bullet" style="left:303px"></div>
+				  <div class="bullet" style="left:339px"></div>
+				  <div class="bullet" style="left:375px"></div>
+				  <div class="bullet" style="left:411px"></div>
+				  <div class="bullet" style="left:447px"></div>
+				  <div class="bullet" style="left:484px"></div>
+				  <div class="bullet" style="left:520px"></div>
+				  <div class="bullet" style="left:556px"></div>
+				  <div class="bullet" style="left:592px"></div>
+				  <div class="bullet" style="left:629px"></div>
+				  
+					<div id="casino1" class="slotMachine"></div>
+					<div id="casino2" class="slotMachine"></div>
+					<div id="casino3" class="slotMachine"></div>
+					<div id="casino4" class="slotMachine"></div>
+
+					<div class="btn-group btn-group-justified btn-group-casino" role="group">
+						<div id="slotMachineButtonCopyText" type="button" class="btn btn-primary btn-lg">Spruch kopieren</div>
+						<div id="slotMachineButtonCopyURL" type="button" class="btn btn-primary btn-lg">Perma-Link kopieren</div>
+						<a id="slotMachineButtonTwitter" target="_blank" type="button" class="btn btn-primary btn-lg twitter-share-button">Spruch twittern</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<script>
+			$(document).ready(function(){
+			  for(var i=0; i < parts1.length; i++)
+  			  $('#casino1').append('<div class="slot slot'+(i+1)+'"><div class="inner">'+parts1[i]+'</div></div>');
+			  for(var i=0; i < parts2.length; i++)
+  			  $('#casino2').append('<div class="slot slot'+(i+1)+'"><div class="inner">'+parts2[i]+'</div></div>');
+			  for(var i=0; i < parts3.length; i++)
+  			  $('#casino3').append('<div class="slot slot'+(i+1)+'"><div class="inner">'+parts3[i]+'</div></div>');
+			  for(var i=0; i < parts4.length; i++)
+  			  $('#casino4').append('<div class="slot slot'+(i+1)+'"><div class="inner">'+parts4[i]+'</div></div>');
+        
+        $("#casino1").on("click",function(){
+          newShuffle(1);
+        });
+        $("#casino2").on("click",function(){
+          newShuffle(2);
+        });
+        $("#casino3").on("click",function(){
+          newShuffle(3);
+        });
+        $("#casino4").on("click",function(){
+          newShuffle(4);
+        });
+         
+        var target1 = -1;
+        var target2 = -1;
+        var target3 = -1;
+        var target4 = -1;
+        
+        function getNextRandom(i){
+          var r = 0;
+          if(i == 0) {
+            r = Math.floor(Math.random()*parts1.length);
+            if(target1 != -1) r = target1;
+          }
+          if(i == 1) {
+            r = Math.floor(Math.random()*parts2.length);
+            if(target2 != -1) r = target2;
+          }
+          if(i == 2) {
+            r = Math.floor(Math.random()*parts3.length);
+            if(target3 != -1) r = target3;
+          }
+          if(i == 3) {
+            r = Math.floor(Math.random()*parts4.length);
+            if(target4 != -1) r = target4;
+          }
+          return parseInt(r);          
+        };
+        
+        function getNextRandom1(){ return getNextRandom(0); }
+        function getNextRandom2(){ return getNextRandom(1); }
+        function getNextRandom3(){ return getNextRandom(2); }
+        function getNextRandom4(){ return getNextRandom(3); }
+        
+				var machine1 = $("#casino1").slotMachine({
+					active	: 0,
+					delay	: 300,
+					randomize : getNextRandom1
+				});
+				var machine2 = $("#casino2").slotMachine({
+					active	: 0,
+					delay	: 300,
+					randomize : getNextRandom2
+				});
+				var machine3 = $("#casino3").slotMachine({
+					active	: 0,
+					delay	: 300,
+					randomize : getNextRandom3
+				});
+				var machine4 = $("#casino4").slotMachine({
+					active	: 0,
+					delay	: 300,
+					randomize : getNextRandom4
+				});
+
+  		  var backgroundMusic = new Audio("background.mp3");
+  		  backgroundMusic.loop = true;
+        backgroundMusic.play();
+        
+  		  var a = new Audio("start.mp3");
+
+        var waitForStop = false;
+        function newShuffle(w){
+				  if(waitForStop) return;
+
+				  $(".handle").addClass("clicked");
+				  setTimeout(function(){$(".handle").removeClass("clicked");},1000);
+
+     		  var a = new Audio("start.mp3"); a.play();
+				  target1 = -1;
+				  target2 = -1;
+				  target3 = -1;
+				  target4 = -1;
+					if(w == 0 || w == 1) machine1.shuffle();
+					if(w == 0 || w == 2) machine2.shuffle();
+					if(w == 0 || w == 3) machine3.shuffle();
+					if(w == 0 || w == 4) machine4.shuffle();
+					waitForStop = true;
+					setTimeout(function(){
+  				 machine1.stop();
+  				 machine2.stop();
+  				 machine3.stop();
+   				 machine4.stop();
+   				 // define the perma link number for the given sentence
+   				 var link = '#'+(
+   				  (machine1.active*parts2.length*parts3.length*parts4.length) +
+            (machine2.active*parts3.length*parts4.length) +
+            (machine3.active*parts4.length) + 
+            (machine4.active)
+           );
+
+   				 if(history.pushState) {
+             history.pushState(null, null, link);
+           } else {
+             location.hash = link;
+           }
+           foundHash = link;
+           setTimeout(function(){ waitForStop = false; },1000);
+					},500);
+        }
+        
+				$("#slotMachineButtonShuffle").click(function(){newShuffle (0);});
+				$("#handleBtn").click(function(){
+				  newShuffle (0);
+				});
+
+        var foundHash = "";
+        setInterval(function() {
+         var h = window.location.hash;
+         if(h == ""){
+           newShuffle(0);
+         }
+         
+         if (h && h != "" && h !== foundHash) {
+           if(waitForStop){
+             // do later             
+             return;
+           }
+           var p = parseInt(h.replace(/[^0-9]*/g,""));
+           
+           var old1 = machine1.active;
+           var old2 = machine2.active;
+           var old3 = machine3.active;
+           var old4 = machine4.active;
+           
+           while(p  > parts3.length * parts1.length*parts2.length*parts4.length) 
+                 p -= parts3.length * parts1.length*parts2.length*parts4.length;
+                 
+           target1 = Math.floor(p / (parts2.length*parts3.length*parts4.length));
+           p = p - (target1*parts2.length*parts3.length*parts4.length);
+
+           target2 = Math.floor(p / (parts3.length*parts4.length));
+           p = p - (target2*parts3.length*parts4.length);
+
+           target3 = Math.floor(p / (parts4.length));
+           p = p - (target3*parts4.length);
+
+           target4 = p;
+
+           foundHash = h;
+     		   var a = new Audio("start.mp3"); a.play();
+  	 			 waitForStop = true;
+ 
+					 if(old1 != target1) machine1.shuffle();
+ 					 if(old2 != target2) machine2.shuffle();
+ 					 if(old3 != target3) machine3.shuffle();
+ 					 if(old4 != target4) machine4.shuffle();
+ 					 setTimeout(function(){
+  				  machine1.stop();
+  				  machine2.stop();
+  				  machine3.stop();
+   				  machine4.stop();
+   				  setTimeout(function(){ waitForStop = false; },1000);
+           },500);
+ 					 
+         }
+        }, 100);
+
+        new Clipboard('#slotMachineButtonCopyText', {
+          text: function(trigger) {
+            var t = [];
+            t.push(parts1[machine1.active]);
+            t.push(parts2[machine2.active]);
+            t.push(parts3[machine3.active]);
+            t.push(parts4[machine4.active]);
+            var btnText = $("#slotMachineButtonCopyText").text();
+            $("#slotMachineButtonCopyText").text("in Zwischenablage kopiert!");
+            setTimeout(function(){
+              $("#slotMachineButtonCopyText").text(btnText);
+            },1000);
+            return t.join(" ").replace(/&shy;/g,"");
+          }
+        });
+
+        new Clipboard('#slotMachineButtonCopyURL', {
+          text: function(trigger) {
+            var t = [];
+            t.push(parts1[machine1.active]);
+            t.push(parts2[machine2.active]);
+            t.push(parts3[machine3.active]);
+            t.push(parts4[machine4.active]);
+            var btnText = $("#slotMachineButtonCopyURL").text();
+            $("#slotMachineButtonCopyURL").text("in Zwischenablage kopiert!");
+            setTimeout(function(){
+              $("#slotMachineButtonCopyURL").text(btnText);
+            },1000);
+
+            return window.location.href;
+          }
+        });
+        
+        $('#slotMachineButtonTwitter').click(function(){
+           var t = [];
+           t.push(parts1[machine1.active]);
+           t.push(parts2[machine2.active]);
+           t.push(parts3[machine3.active]);
+           t.push(parts4[machine4.active]);
+           var text = t.join(" ").replace(/&shy;/g,"");
+   				 
+   				 var link = (
+   				  (machine1.active*parts2.length*parts3.length*parts4.length) +
+            (machine2.active*parts3.length*parts4.length) +
+            (machine3.active*parts4.length) + 
+            (machine4.active)
+           );
+
+           window.open("https://twitter.com/intent/tweet?text="+encodeURIComponent(text+' #lernbuzz '+window.location.href),'twitter','width=500,height=350');
+        });
+
+        $(document).keydown(function (e){ 
+          var p = parseInt(window.location.hash.replace(/[^0-9]*/g,""));
+          if(e.keyCode == 37 || e.keyCode == 38) {
+            window.location.hash = '#'+(p-1);
+          }
+          else if(e.keyCode == 39 || e.keyCode == 40) { 
+            window.location.hash = '#'+(p+1);
+          }
+        });
+        
+			});
+
+
+
+		</script>
+    <div style="text-align:center;font-size:80%;padding-bottom:20px">Ein Projekt von <a href="http://www.joeran.de/lernbuzz/" target="_blabk">J&K</a> und der <a href="http://phsz.ch" target="_blank">Pädagogischen Hochschule Schwyz</a></br> gebaut mit <a href="https://github.com/josex2r/jQuery-SlotMachine" target="_blank">jQuery-SlotMachine</a></div>
+    
+</body>
+</html>
